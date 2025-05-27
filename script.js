@@ -20,6 +20,9 @@ let questionCount = 0;
 
 const questionElement = document.querySelector(".questions-front p"); //this is for all the question
 const answerElement = document.querySelector(".questions-back p"); // and this is for the answer
+
+const questionsFront = document.querySelector(".questions-front");
+const questionsBack =document.querySelector(".questions-back")
 const btns = document.querySelectorAll(".pagination .page-link") // for the next and previous buttons
 const showAnswer = document.querySelector(".buttonShow") // this is for the show answer button
 
@@ -27,7 +30,27 @@ const showAnswer = document.querySelector(".buttonShow") // this is for the show
 
 function loadQuestion() {
     const current = questions[currentQuestionIndex];
-    questionElement.innerText = `Questions ${currentQuestionIndex + 1}: ${current.question}`;
+    questionElement.innerText = `Question${currentQuestionIndex + 1}: ${current.question}`;
 
-    option
+
 }
+loadQuestion();
+
+function loadAnswer() {
+    const currentAnswer = questions[currentQuestionIndex];
+    answerElement.innerText = `Answer is : ${currentAnswer.answer}`;
+}
+
+// loadAnswer();
+
+showAnswer.addEventListener("click",() => {
+   console.log("button clicked");
+loadAnswer();
+questionsFront.classList.toggle("hide");
+questionsBack.classList.toggle("show");
+
+});
+
+// showAnswer.addEventListener("click", () => {
+//     console.log("button clicked");s
+// })

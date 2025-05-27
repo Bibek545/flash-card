@@ -66,12 +66,14 @@ body {
 .questions-front {
     background-color: #bbb;
     color: black;
+    display: block;
 }
 
 .questions-back {
-    background-color: dodgerblue;
-    color: white;
+    /* background-color: dodgerblue; */
+    /* color: white; */
     transform: rotateY(180deg);
+    display: none;
 }
 
 .btns {
@@ -80,4 +82,12 @@ body {
 
 .togglebtns {
     margin: 40px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block; /* or use 'flex' if you want center alignment */
 }
